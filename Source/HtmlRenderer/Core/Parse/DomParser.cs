@@ -308,20 +308,20 @@ namespace TheArtOfDev.HtmlRenderer.Core.Parse
                     if (box == null)
                         return false;
 
-                    if (box.HtmlTag.Name.Equals(selector.Class, StringComparison.InvariantCultureIgnoreCase))
+                    if (box.HtmlTag.Name.Equals(selector.Class, Platform.DefaultStringComparison))
                         matched = true;
 
                     if (!matched && box.HtmlTag.HasAttribute("class"))
                     {
                         var className = box.HtmlTag.TryGetAttribute("class");
-                        if (selector.Class.Equals("." + className, StringComparison.InvariantCultureIgnoreCase) || selector.Class.Equals(box.HtmlTag.Name + "." + className, StringComparison.InvariantCultureIgnoreCase))
+                        if (selector.Class.Equals("." + className, Platform.DefaultStringComparison) || selector.Class.Equals(box.HtmlTag.Name + "." + className, Platform.DefaultStringComparison))
                             matched = true;
                     }
 
                     if (!matched && box.HtmlTag.HasAttribute("id"))
                     {
                         var id = box.HtmlTag.TryGetAttribute("id");
-                        if (selector.Class.Equals("#" + id, StringComparison.InvariantCultureIgnoreCase))
+                        if (selector.Class.Equals("#" + id, Platform.DefaultStringComparison))
                             matched = true;
                     }
 

@@ -232,7 +232,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Parse
             while ((atrule = RegexParserUtils.GetCssAtRules(stylesheet, ref startIdx)) != null)
             {
                 //Just process @media rules
-                if (!atrule.StartsWith("@media", StringComparison.InvariantCultureIgnoreCase))
+                if (!atrule.StartsWith("@media", Platform.DefaultStringComparison))
                     continue;
 
                 //Extract specified media types
@@ -242,7 +242,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Parse
                 {
                     string line = types[0].Value;
 
-                    if (line.StartsWith("@media", StringComparison.InvariantCultureIgnoreCase) && line.EndsWith("{"))
+                    if (line.StartsWith("@media", Platform.DefaultStringComparison) && line.EndsWith("{"))
                     {
                         //Get specified media types in the at-rule
                         string[] media = line.Substring(6, line.Length - 7).Split(' ');
@@ -409,7 +409,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Parse
                     if (adjEndIdx >= splitIdx)
                     {
                         string propValue = blockSource.Substring(splitIdx, adjEndIdx - splitIdx + 1).Trim();
-                        if (!propValue.StartsWith("url", StringComparison.InvariantCultureIgnoreCase))
+                        if (!propValue.StartsWith("url", Platform.DefaultStringComparison))
                             propValue = propValue.ToLower();
                         AddProperty(propName, propValue, properties);
                     }
@@ -586,7 +586,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Parse
         /// <returns>parsed value</returns>
         private static string ParseBackgroundImageProperty(string propValue)
         {
-            int startIdx = propValue.IndexOf("url(", StringComparison.InvariantCultureIgnoreCase);
+            int startIdx = propValue.IndexOf("url(", Platform.DefaultStringComparison);
             if (startIdx > -1)
             {
                 startIdx += 4;

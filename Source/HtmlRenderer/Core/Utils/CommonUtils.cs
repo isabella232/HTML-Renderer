@@ -200,7 +200,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Utils
         {
             foreach (string header in client.ResponseHeaders)
             {
-                if (header.Equals("Content-Type", StringComparison.InvariantCultureIgnoreCase))
+                if (header.Equals("Content-Type", Platform.DefaultStringComparison))
                     return client.ResponseHeaders[header];
             }
             return null;
@@ -345,41 +345,41 @@ namespace TheArtOfDev.HtmlRenderer.Core.Utils
             if (number == 0)
                 return string.Empty;
 
-            if (style.Equals(CssConstants.LowerGreek, StringComparison.InvariantCultureIgnoreCase))
+            if (style.Equals(CssConstants.LowerGreek, Platform.DefaultStringComparison))
             {
                 return ConvertToGreekNumber(number);
             }
-            else if (style.Equals(CssConstants.LowerRoman, StringComparison.InvariantCultureIgnoreCase))
+            else if (style.Equals(CssConstants.LowerRoman, Platform.DefaultStringComparison))
             {
                 return ConvertToRomanNumbers(number, true);
             }
-            else if (style.Equals(CssConstants.UpperRoman, StringComparison.InvariantCultureIgnoreCase))
+            else if (style.Equals(CssConstants.UpperRoman, Platform.DefaultStringComparison))
             {
                 return ConvertToRomanNumbers(number, false);
             }
-            else if (style.Equals(CssConstants.Armenian, StringComparison.InvariantCultureIgnoreCase))
+            else if (style.Equals(CssConstants.Armenian, Platform.DefaultStringComparison))
             {
                 return ConvertToSpecificNumbers(number, _armenianDigitsTable);
             }
-            else if (style.Equals(CssConstants.Georgian, StringComparison.InvariantCultureIgnoreCase))
+            else if (style.Equals(CssConstants.Georgian, Platform.DefaultStringComparison))
             {
                 return ConvertToSpecificNumbers(number, _georgianDigitsTable);
             }
-            else if (style.Equals(CssConstants.Hebrew, StringComparison.InvariantCultureIgnoreCase))
+            else if (style.Equals(CssConstants.Hebrew, Platform.DefaultStringComparison))
             {
                 return ConvertToSpecificNumbers(number, _hebrewDigitsTable);
             }
-            else if (style.Equals(CssConstants.Hiragana, StringComparison.InvariantCultureIgnoreCase) || style.Equals(CssConstants.HiraganaIroha, StringComparison.InvariantCultureIgnoreCase))
+            else if (style.Equals(CssConstants.Hiragana, Platform.DefaultStringComparison) || style.Equals(CssConstants.HiraganaIroha, Platform.DefaultStringComparison))
             {
                 return ConvertToSpecificNumbers2(number, _hiraganaDigitsTable);
             }
-            else if (style.Equals(CssConstants.Katakana, StringComparison.InvariantCultureIgnoreCase) || style.Equals(CssConstants.KatakanaIroha, StringComparison.InvariantCultureIgnoreCase))
+            else if (style.Equals(CssConstants.Katakana, Platform.DefaultStringComparison) || style.Equals(CssConstants.KatakanaIroha, Platform.DefaultStringComparison))
             {
                 return ConvertToSpecificNumbers2(number, _satakanaDigitsTable);
             }
             else
             {
-                var lowercase = style.Equals(CssConstants.LowerAlpha, StringComparison.InvariantCultureIgnoreCase) || style.Equals(CssConstants.LowerLatin, StringComparison.InvariantCultureIgnoreCase);
+                var lowercase = style.Equals(CssConstants.LowerAlpha, Platform.DefaultStringComparison) || style.Equals(CssConstants.LowerLatin, Platform.DefaultStringComparison);
                 return ConvertToEnglishNumber(number, lowercase);
             }
         }
@@ -472,7 +472,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Utils
             {
                 var n = number % 10;
                 if (n > 0)
-                    sb = alphabet[level, number % 10 - 1].ToString(CultureInfo.InvariantCulture) + sb;
+                    sb = alphabet[level, number % 10 - 1].ToString() + sb;
                 number /= 10;
                 level++;
             }

@@ -881,13 +881,16 @@ namespace TheArtOfDev.HtmlRenderer.Core
                         }
                     }
                 }
+#if !PCL
                 else
                 {
                     var nfo = new ProcessStartInfo(link.HrefLink);
                     nfo.UseShellExecute = true;
                     Process.Start(nfo);
                 }
+#endif
             }
+
         }
 
         /// <summary>

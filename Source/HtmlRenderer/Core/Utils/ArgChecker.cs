@@ -110,7 +110,11 @@ namespace TheArtOfDev.HtmlRenderer.Core.Utils
 
             if (false == File.Exists(arg))
             {
+#if PCL
+                throw new FileNotFoundException(string.Format("Given file in argument '{0}' not exist.", argName));
+#else
                 throw new FileNotFoundException(string.Format("Given file in argument '{0}' not exist.", argName), arg);
+#endif
             }
         }
     }

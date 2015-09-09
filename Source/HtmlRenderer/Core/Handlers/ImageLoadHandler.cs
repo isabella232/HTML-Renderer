@@ -232,9 +232,9 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 foreach (var part in s[0].Split(new[] { ';' }))
                 {
                     var pPart = part.Trim();
-                    if (pPart.StartsWith("image/", StringComparison.InvariantCultureIgnoreCase))
+                    if (pPart.StartsWith("image/", Platform.DefaultStringComparison))
                         imagePartsCount++;
-                    if (pPart.Equals("base64", StringComparison.InvariantCultureIgnoreCase))
+                    if (pPart.Equals("base64", Platform.DefaultStringComparison))
                         base64PartsCount++;
                 }
 

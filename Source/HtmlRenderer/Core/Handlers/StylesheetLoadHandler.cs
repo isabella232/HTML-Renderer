@@ -104,7 +104,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
             {
                 if (fileInfo.Exists)
                 {
-                    using (var sr = new StreamReader(fileInfo.FullName))
+                    using (var sr = new StreamReader(new FileStream(fileInfo.FullName, FileMode.Open, FileAccess.Read)))
                     {
                         return sr.ReadToEnd();
                     }

@@ -110,7 +110,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
         /// </summary>
         static ContextMenuHandler()
         {
-            if (CultureInfo.CurrentUICulture.Name.StartsWith("fr", StringComparison.InvariantCultureIgnoreCase))
+            if (CultureInfo.CurrentUICulture.Name.StartsWith("fr", Platform.DefaultStringComparison))
             {
                 _selectAll = "Tout sélectionner";
                 _copy = "Copier";
@@ -122,7 +122,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Ouvrir la vidéo";
                 _copyVideoUrl = "Copier l'URL de l'vidéo";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("de", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("de", Platform.DefaultStringComparison))
             {
                 _selectAll = "Alle auswählen";
                 _copy = "Kopieren";
@@ -134,7 +134,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Video öffnen";
                 _copyVideoUrl = "Video-URL kopieren";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("it", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("it", Platform.DefaultStringComparison))
             {
                 _selectAll = "Seleziona tutto";
                 _copy = "Copia";
@@ -146,7 +146,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Apri il video";
                 _copyVideoUrl = "Copia URL video";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("es", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("es", Platform.DefaultStringComparison))
             {
                 _selectAll = "Seleccionar todo";
                 _copy = "Copiar";
@@ -158,7 +158,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Abrir video";
                 _copyVideoUrl = "Copiar URL de la video";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("ru", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("ru", Platform.DefaultStringComparison))
             {
                 _selectAll = "Выбрать все";
                 _copy = "Копировать";
@@ -170,7 +170,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Открыть видео";
                 _copyVideoUrl = "Копировать адрес видео";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("sv", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("sv", Platform.DefaultStringComparison))
             {
                 _selectAll = "Välj allt";
                 _copy = "Kopiera";
@@ -182,7 +182,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Öppna video";
                 _copyVideoUrl = "Kopiera video URL";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("hu", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("hu", Platform.DefaultStringComparison))
             {
                 _selectAll = "Összes kiválasztása";
                 _copy = "Másolás";
@@ -194,7 +194,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Videó megnyitása";
                 _copyVideoUrl = "Videó URL másolása";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("cs", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("cs", Platform.DefaultStringComparison))
             {
                 _selectAll = "Vybrat vše";
                 _copy = "Kopírovat";
@@ -206,7 +206,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Otevřít video";
                 _copyVideoUrl = "Kopírovat URL video";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("da", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("da", Platform.DefaultStringComparison))
             {
                 _selectAll = "Vælg alt";
                 _copy = "Kopiér";
@@ -218,7 +218,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Åbn video";
                 _copyVideoUrl = "Kopier video-URL";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("nl", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("nl", Platform.DefaultStringComparison))
             {
                 _selectAll = "Alles selecteren";
                 _copy = "Kopiëren";
@@ -230,7 +230,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Handlers
                 _openVideo = "Video openen";
                 _copyVideoUrl = "URL video kopiëren";
             }
-            else if (CultureInfo.CurrentUICulture.Name.StartsWith("fi", StringComparison.InvariantCultureIgnoreCase))
+            else if (CultureInfo.CurrentUICulture.Name.StartsWith("fi", Platform.DefaultStringComparison))
             {
                 _selectAll = "Valitse kaikki";
                 _copy = "Kopioi";

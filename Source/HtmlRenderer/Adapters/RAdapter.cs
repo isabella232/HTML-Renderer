@@ -209,28 +209,33 @@ namespace TheArtOfDev.HtmlRenderer.Adapters
         /// <summary>
         /// Get image to be used while HTML image is loading.
         /// </summary>
-        public RImage GetLoadingImage()
+        public virtual RImage GetLoadingImage()
         {
+#if !PCL
             if (_loadImage == null)
             {
                 var stream = typeof(HtmlRendererUtils).Assembly.GetManifestResourceStream("TheArtOfDev.HtmlRenderer.Core.Utils.ImageLoad.png");
                 if (stream != null)
                     _loadImage = ImageFromStream(stream);
             }
+#endif
             return _loadImage;
+
         }
 
         /// <summary>
         /// Get image to be used if HTML image load failed.
         /// </summary>
-        public RImage GetLoadingFailedImage()
+        public virtual RImage GetLoadingFailedImage()
         {
+#if !PCL
             if (_errorImage == null)
             {
                 var stream = typeof(HtmlRendererUtils).Assembly.GetManifestResourceStream("TheArtOfDev.HtmlRenderer.Core.Utils.ImageError.png");
                 if (stream != null)
                     _errorImage = ImageFromStream(stream);
             }
+#endif
             return _errorImage;
         }
 

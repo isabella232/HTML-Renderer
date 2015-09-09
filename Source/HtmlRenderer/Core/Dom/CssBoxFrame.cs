@@ -82,12 +82,12 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             Uri uri;
             if (Uri.TryCreate(GetAttribute("src"), UriKind.Absolute, out uri))
             {
-                if (uri.Host.IndexOf("youtube.com", StringComparison.InvariantCultureIgnoreCase) > -1)
+                if (uri.Host.IndexOf("youtube.com", Platform.DefaultStringComparison) > -1)
                 {
                     _isVideo = true;
                     LoadYoutubeDataAsync(uri);
                 }
-                else if (uri.Host.IndexOf("vimeo.com", StringComparison.InvariantCultureIgnoreCase) > -1)
+                else if (uri.Host.IndexOf("vimeo.com", Platform.DefaultStringComparison) > -1)
                 {
                     _isVideo = true;
                     LoadVimeoDataAsync(uri);
@@ -146,7 +146,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             {
                 try
                 {
-                    var apiUri = new Uri(string.Format("http://gdata.youtube.com/feeds/api/videos/{0}?v=2&alt=json", uri.Segments[2]));
+                    var apiUri = new Uri(string.Format("http://gdata.youtube.com/feeds/api/videos/{0}?v=2&alt=json", Platform.GetSegments(uri)[2]));
 
                     var client = new WebClient();
                     client.Encoding = Encoding.UTF8;
@@ -282,7 +282,7 @@ namespace TheArtOfDev.HtmlRenderer.Core.Dom
             {
                 try
                 {
-                    var apiUri = new Uri(string.Format("http://vimeo.com/api/v2/video/{0}.json", uri.Segments[2]));
+                    var apiUri = new Uri(string.Format("http://vimeo.com/api/v2/video/{0}.json", Platform.GetSegments(uri)[2]));
 
                     var client = new WebClient();
                     client.Encoding = Encoding.UTF8;
