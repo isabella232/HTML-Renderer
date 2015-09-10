@@ -58,7 +58,7 @@ namespace System.IO
 
     static class FileSystem
     {
-        public static Dictionary<string, byte[]> Data;
+        public static Dictionary<string, byte[]> Data = new Dictionary<string, byte[]>();
 
         public static byte[] GetData(string file)
         {
