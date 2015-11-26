@@ -90,7 +90,7 @@ namespace System.IO
         public int Length { get; private set; }
     }
 
-    public static class Directory
+    internal static class Directory
     {
         public static bool Exists(string tempPath)
         {
